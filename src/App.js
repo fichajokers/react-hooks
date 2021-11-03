@@ -1,29 +1,19 @@
-import { useState,useEffect } from 'react';
 import './App.css';
-import UserInfoComponent from './UserInfoComponent';
+import FooterComponent from './components/FooterComponent/FooterComponent';
+import HeaderComponent from './components/HeaderComponent/HeaderComponent';
+import UseEffectComponent from './components/UseEffectComponent/UseEffectComponent';
+import UseStateComponent from './components/UseStateComponent/UseStateComponent';
 
 const App = () => {
-  const [count,setCount] = useState(0)
-  const [showHideUserInfo,setShowHideUserInfo] = useState(false)
-  const [flagShowHide,setFlagShowHide] = useState(false)
-  
-  useEffect( () =>{
-    setShowHideUserInfo(!showHideUserInfo)
-  },[flagShowHide])
-
   return (
     <div className="App">
-      <h1>{count}</h1>
-      <div>
-        <button onClick={() => setCount(count + 1)}>add count</button>
-        <button onClick={() => setCount(count - 1)}>remove count</button>
+      <HeaderComponent/>
+      
+      <div className="row">
+        <div className="col"><UseStateComponent/></div>
+        <div className="col"><UseEffectComponent/></div>
       </div>
-
-      <h1>Show/hide user info</h1>
-      <div>
-        <button onClick={ () => setFlagShowHide(!flagShowHide) }>Show/hide</button>
-        {showHideUserInfo && <UserInfoComponent />}
-      </div>
+      <FooterComponent/>
     </div>
   );
 }

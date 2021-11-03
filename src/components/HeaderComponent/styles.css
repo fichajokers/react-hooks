@@ -1,0 +1,11 @@
+.header{
+    width: 100%;
+    background-color: black;
+    height: 7vh;
+}
+
+.text-header{
+    margin-top: 0px;
+    color: white;
+    padding-top: 2vh;
+}
